@@ -1,0 +1,19 @@
+function findMostFrequent(arr) {
+    const counts = {};
+    let maxCount = 0;
+    let mostFrequent;
+    
+    for (const item of arr) {
+        counts[item] = (counts[item] || 0) + 1;
+        if (counts[item] > maxCount) {
+            maxCount = counts[item];
+            mostFrequent = item;
+        }
+    }
+    
+    return mostFrequent + " ( " + maxCount + " times )";
+}
+
+// Example usage
+const arr1 = [3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];
+console.log(findMostFrequent(arr1)); // Output: a ( 5 times )
